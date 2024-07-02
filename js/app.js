@@ -118,7 +118,7 @@ for (let i = 0; i < sectionsData.length; i++) {
   const item = document.createElement("li");
   const link = document.createElement("a");
   const node = document.createTextNode(sectionsData[i].title);
-  link.href = "#"+sectionsData[i].link;
+  link.href = "#" + sectionsData[i].link;
   link.appendChild(node);
   item.appendChild(link);
 
@@ -129,11 +129,10 @@ for (let i = 0; i < sectionsData.length; i++) {
   element.appendChild(item);
 
   // Scroll to anchor ID using scrollTO event
-  // important note : no need for this part since we used links to go to sections
-  // item.addEventListener("click",function(){
-  //   let destiniation = document.getElementById(sectionsData[i].link);
-  //   window.scrollTo(0,findPosition(destiniation));
-  // });
+  item.addEventListener("click",function(){
+    let destiniation = document.getElementById(sectionsData[i].link);
+    window.scrollTo(0,findPosition(destiniation));
+  });
   
 }
 
