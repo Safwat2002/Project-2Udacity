@@ -116,14 +116,10 @@ function makeActive(){
 // sectionsData
 for (let i = 0; i < sectionsData.length; i++) {
   const item = document.createElement("li");
-  const link = document.createElement("a");
   const node = document.createTextNode(sectionsData[i].title);
-  link.href = "#" + sectionsData[i].link;
-  link.appendChild(node);
-  item.appendChild(link);
+  item.appendChild(node);
 
   item.classList.add("menu__link");
-  item.setAttribute('id',sectionsData[i].link+"_link" );
 
   const element = document.getElementById("navbar__list");
   element.appendChild(item);
@@ -135,22 +131,6 @@ for (let i = 0; i < sectionsData.length; i++) {
   });
   
 }
-
-/* This Code Is For Change Background for active navbar link */
-window.onload = function () {
-  document.getElementById("section1_link").classList.add("active-link");
-};
-window.onhashchange = function () {
-  let hash = window.location.hash;
-  hash = hash.slice(1).concat("_link");
-
-  let links = document.querySelectorAll(".menu__link");
-  for (let i = 0; i < links.length; i++) {
-    links[i].classList.remove("active-link");
-  }
-  document.getElementById(hash).classList.add("active-link");
-};
-
 
 
 // Add class 'active' to section when near top of viewport
