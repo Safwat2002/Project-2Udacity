@@ -126,8 +126,11 @@ for (let i = 0; i < sectionsData.length; i++) {
 
   // Scroll to anchor ID using scrollTO event
   item.addEventListener("click",function(){
-    let destiniation = document.getElementById(sectionsData[i].link);
-    window.scrollTo(0,findPosition(destiniation));
+    let destination = document.getElementById(sectionsData[i].link);
+    
+    destination.scrollIntoView({
+      behavior: 'smooth'
+  });
   });
   
 }
