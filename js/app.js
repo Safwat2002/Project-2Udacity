@@ -26,7 +26,7 @@
 
 // this is simulation for data brought from an api contain section info
 
-var sectionsData = [
+let sectionsData = [
   {
     id: 1,
     title: "Section 1",
@@ -76,7 +76,7 @@ var sectionsData = [
  * this function define the position of element where we want to scroll to
  */
 function findPosition(obj) {
-  var currenttop = 0;
+  let currenttop = 0;
   if (obj.offsetParent) {
     do {
       currenttop += obj.offsetTop;
@@ -127,7 +127,7 @@ for (let i = 0; i < sectionsData.length; i++) {
   // Scroll to anchor ID using scrollTO event
   item.addEventListener("click",function(){
     let destination = document.getElementById(sectionsData[i].link);
-    
+
     destination.scrollIntoView({
       behavior: 'smooth'
   });
